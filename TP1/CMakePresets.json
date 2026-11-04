@@ -11,5 +11,11 @@
         "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe"
       }
     }
-  ]
+  ],
+  "buildPresets": [
+        {
+            "name": "gcc-windows-debug",
+            "configurePreset": "gcc-windows"
+        }
+    ]
 }

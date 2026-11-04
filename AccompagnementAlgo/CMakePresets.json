@@ -12,5 +12,11 @@
                 "CMAKE_BUILD_TYPE" : "Debug"
             }
         }
+    ],
+    "buildPresets": [
+        {
+            "name": "gcc-windows-debug",
+            "configurePreset": "gcc-windows"
+        }
     ]
 }

@@ -118,7 +118,7 @@ Then create or select a workspace folder with **File > Open Folder**. You can
 choose any location and any name, for example:
 
 ```text
-C:\Users\<your-name>\Documents\MyCWorkspace
+C:\<your-personal-path>\<your-Workspace-Name>
 ```
 
 The workspace folder is the root containing `.vscode` and one or more project
