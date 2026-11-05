@@ -2,9 +2,9 @@
     "version": 3,
     "configurePresets": [
         {
-            "name": "gcc-windows-debug",
+            "name": "gcc-windows",
             "displayName": "GCC MinGW on Windows",
-            "generator": "MinGW Makefile",
+            "generator": "MinGW Makefiles",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
@@ -16,7 +16,7 @@
     "buildPresets": [
         {
             "name": "gcc-windows-debug",
-            "configurePreset": "gcc-windows-debug"
+            "configurePreset": "gcc-windows"
         }
     ]
 }
