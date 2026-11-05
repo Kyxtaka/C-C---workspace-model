@@ -10,5 +10,5 @@ int multiplication(int a, int b) {
 }
 
 int nombre_mystere(int a, int b) {
-    return 1;
+    return a + b; // to change with the mystery number logic later
 }

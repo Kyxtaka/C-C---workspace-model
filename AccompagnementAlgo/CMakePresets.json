@@ -16,7 +16,7 @@
     "buildPresets": [
         {
             "name": "gcc-windows-debug",
-            "configurePreset": "gcc-windows"
+            "configurePreset": "gcc-windows-debug"
         }
     ]
 }
