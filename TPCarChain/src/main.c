@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "char_func.h"
 #include "vigenere.h"
 
 // int main() {
