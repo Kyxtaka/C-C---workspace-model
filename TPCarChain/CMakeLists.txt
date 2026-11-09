@@ -17,6 +17,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 add_executable(TPCarChain
     src/main.c
     src/char_func.c
+    src/vigenere.c
 )
 
 # set header include directory path
