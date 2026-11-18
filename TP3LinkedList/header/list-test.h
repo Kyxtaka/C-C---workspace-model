@@ -8,13 +8,12 @@
 
 void testPrintNode();
 void testPrintList();
-
-
 void testListClear();
-void testFreeNode();
+
+void testNodeNew();
+void testListNew();
+
 void testDeleteList();
-
-
-
+void testInsertNode();
 
 #endif

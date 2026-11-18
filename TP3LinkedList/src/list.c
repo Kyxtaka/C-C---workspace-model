@@ -10,6 +10,21 @@ struct List *List_new() {
     return list;
 };
 
+struct Node *Node_new(char *value) {
+    struct Node *node = malloc(sizeof(struct Node));
+    if (node) {
+        node->next = NULL;
+        node->prev = NULL;
+        node->value = NULL;
+    }
+    if (*(value) != (char) *"") {
+        // char *nodeVal = NewNodeValue(value);
+        char *nodeVal = strdup(value);
+        node->value = nodeVal;
+    }
+    return node;
+}
+
 void freeNode(struct Node* node) {
     if (!node) {
         return;
@@ -47,8 +62,10 @@ void List_clear(struct List* list) {
 
 void List_delete(struct List* list) {
     if (!list) {
+        printf("null pointer can't delete list\n");
         return;
     }
+    printf("deleting list \n");
     List_clear(list);
     struct Node* head = list->head;
     struct Node* tail = list->tail;
@@ -63,13 +80,20 @@ void List_delete(struct List* list) {
 
 void printNode(struct Node* node) {
     if (!node) {
+        printf("-[NULL PTR]-");
         return;
     }
-    printf("-(%d)-", *(node->value));
+    if (node->value != NULL) {
+        printf("-(%s)-", (node->value));
+    }else {
+        printf("-(Empty Value)-");
+    }
+    return;
 }
 
 void List_print(struct List* list) {
     if (!list) {
+        printf("NULL PTR\n");
         return;
     }
     struct Node* currentNode = list->head; 
@@ -85,4 +109,9 @@ void List_print(struct List* list) {
     }
     printf(" | size: %llu", list->size);
     printf("\n");    
+}
+
+
+int List_insert(struct List *list, struct Node *pos, const char *value) {
+    
 }

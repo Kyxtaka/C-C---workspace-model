@@ -5,9 +5,7 @@ void testPrintNode(){
     node1->next = NULL;
     node1->prev = NULL;
 
-    char *nodeValue1 = malloc(2*sizeof(char));
-    nodeValue1[0] = 'a';
-    nodeValue1[1] = '\0';
+    char *nodeValue1 = "a";
     node1->value = nodeValue1;
 
     printf("==============================================\n");
@@ -15,7 +13,7 @@ void testPrintNode(){
     printf("function output: ");
     printNode(node1);
     printf("\n");
-    printf("expected result: -(%d)-\n", *(node1->value));
+    printf("expected result: -(%s)-\n", (node1->value));
     printf("==============================================\n");
 }
 
@@ -32,16 +30,12 @@ void testPrintList() {
 
     node1->prev = NULL;
     node1->next = node2;
-    char *node1Val = malloc(2*sizeof(char));
-    node1Val[0] = 'a';
-    node1Val[1] = '\0'; 
+    char *node1Val = "a";
     node1->value = node1Val;
 
     node2->prev = node1;
     node2->next = NULL;
-    char *node2Val = malloc(2*sizeof(char));
-    node2Val[0] = 'z';
-    node2Val[1] = '\0';
+    char *node2Val = "z";
     node2->value = node2Val;
 
     list2->head = node1;
@@ -58,7 +52,7 @@ void testPrintList() {
     printf("test List_print()\n");
     printf("function output: ");
     List_print(list2);
-    printf("expected result: -(97)--(122)-\n");
+    printf("expected result: -(a)--(z)-\n");
     printf("==============================================\n");
 }
 
@@ -71,16 +65,12 @@ void testListClear() {
 
     node1->prev = NULL;
     node1->next = node2;
-    char *node1Val = malloc(2*sizeof(char));
-    node1Val[0] = 'a';
-    node1Val[1] = '\0'; 
+    char *node1Val = "a";
     node1->value = node1Val;
 
     node2->prev = node1;
     node2->next = NULL;
-    char *node2Val = malloc(2*sizeof(char));
-    node2Val[0] = 'z';
-    node2Val[1] = '\0';
+    char *node2Val = "z";
     node2->value = node2Val;
 
     list->head = node1;
@@ -93,7 +83,7 @@ void testListClear() {
     printf("Before clear\n");
     printf("function output: ");
     List_print(list);
-    printf("expected result: -(97)--(122)-\n");
+    printf("expected result: -(a)--(z)-\n");
     printf("----------------------------------------------\n");
     List_clear(list);
     printf("test List_Clear()\n");
@@ -105,6 +95,79 @@ void testListClear() {
 
 }
 
-// void testCreateNode() {
-//     struct node
+
+void testNodeNew() {
+    struct Node *node1 = Node_new("");
+    struct Node *node2 = Node_new("");    
+    printf("==============================================\n");
+    printf("test Node_new()\n");
+    printNode(node1);
+    printf("\n");
+    printNode(node2);
+    printf("\n==============================================\n");
+}
+
+void testListNew() {
+    printf("==============================================\n");
+    printf("test List_new()\n");
+    struct List *list = List_new();
+    List_print(list);
+    printf("\n==============================================\n");
+}
+
+// void testNewNodeVal() {
+//     printf("==============================================\n");
+//     printf("test NewNodeValue\n");
+//     char *nodeVal1 = NewNodeValue("t");
+//     char *nodeVal2 = NewNodeValue("1");
+//     printf("%s\n", nodeVal1);
+//     printf("%s\n", nodeVal2);
+//     printf("==============================================\n");
 // }
+
+void testDeleteList() {
+    struct List *list = List_new();
+    struct Node *node1 = Node_new("a");
+    struct Node *node2 = Node_new("b");
+    struct Node *node3 = Node_new("c");
+    struct Node *node4 = Node_new("d");
+    struct Node *node5 = Node_new("e");
+    struct Node *node6 = Node_new("f");
+    struct Node *node7 = Node_new("g");
+    struct Node *node8 = Node_new("h");
+    list->head = node1;
+
+    node2->prev = node1;
+    node3->prev = node2;
+    node4->prev = node3;
+    node5->prev = node4;
+    node6->prev = node5;
+    node7->prev = node6;
+    node8->prev = node7;
+    
+    node1->next = node2;
+    node2->next = node3;
+    node3->next = node4;
+    node4->next = node5;
+    node5->next = node6;
+    node6->next = node7;
+    node7->next = node8;
+
+    list->tail = node8;
+    list->size = 8;
+    printf("==============================================\n");
+    printf("test testDeleteList()\n");
+    printf("before delete\n");
+    List_print(list);
+    List_delete(list);
+    printf("list deleted\n");
+    List_print(list);
+    printf("==============================================\n");
+}
+
+void testInsertNode() {
+    printf("==============================================\n");
+    printf("test insertNode()\n");
+    printf("implementing insert node....\n");
+    printf("==============================================\n");
+}

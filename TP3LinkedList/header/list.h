@@ -2,6 +2,7 @@
 # define LIST_HEADER_GUARD
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 // a node of a List
 struct Node {
     // a pointer to the previous node in the list (*)
@@ -28,6 +29,10 @@ struct List {
 /// @brief Allocate memory for a new linked list
 struct List *List_new();
 
+/// @brief Allocate memory and return the pointer for a new node
+struct Node *Node_new(char *value);
+
+// char *NewNodeValue(char *value);
 //==============================================
 
 /// @brief Clear the list and free nodes memory
@@ -51,6 +56,10 @@ void printNode(struct Node* node);
 /// @param list 
 void List_print(struct List* list);
 
-
-void List_insert(struct List *list, struct Node *pos, const char* value);
+/// @brief return 0 if it works well
+/// @param list 
+/// @param pos 
+/// @param value 
+/// @return 
+int List_insert(struct List *list, struct Node *pos, const char *value );
 # endif
